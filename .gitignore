@@ -1,0 +1,101 @@
+*.class
+*.iml
+*.ipr
+*.iws
+*.DS_Store
+*.war
+*.ear
+*.log
+*.rdb
+*capfile
+*gradle*
+~
+.idea
+.gradle
+.serviceRequest
+.classpath
+.settings
+logs
+target
+out
+javadoc
+build
+bin
+.mtj.tmp/
+*.jar
+hs_err_pid*
+
+
+/.metadata/
+# Eclipse
+
+.project
+.settings/
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.recommenders
+# External tool builders
+.externalToolBuilders/
+.factorypath
+.target
+.recommenders/
+.cache-main
+.scala_dependencies
+.worksheet
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# Intellij
+.idea/
+
+# Mac
+.DS_Store
+
+
+# Log file
+
+
+# BlueJ files
+*.ctxt
+
+
+# Package Files #
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+
+# Mac OS Gitignore
+# General
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk

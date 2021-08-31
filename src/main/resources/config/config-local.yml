@@ -1,0 +1,63 @@
+server:
+  type: default
+  maxThreads: 1024
+  rootPath: /api
+  applicationContextPath: /
+  applicationConnectors:
+    - type: http
+      port: 10001
+      acceptorThreads: 3
+      selectorThreads: 6
+  adminConnectors:
+    - type: http
+      port: 10005
+  requestLog:
+    timeZone: IST
+    appenders:
+      - type: file
+        threshold: DEBUG
+        timeZone: IST
+        logFormat: "%highlight(%-5level) [%date] [%thread] [%cyan(%logger{0})]: %message%n"
+        currentLogFilename: /tmp/mfy-request.log
+        archive: true
+        archivedLogFilenamePattern: /tmp/mfy-request.%d{yyyy-MM-dd}-%i.log.gz
+        archivedFileCount: 10
+        maxFileSize: 1024MB
+
+swagger:
+  resourcePackage: com.myntra.hackathon.resource.v1
+
+mongodb:
+  uri: mongodb://localhost:27017
+  dbName: mfy
+
+logging:
+  level: INFO
+  loggers:
+    com.myntra.mfy: DEBUG
+  appenders:
+    - type: console
+    - type: file
+      threshold: INFO
+      logFormat: "%-6level [%d{HH:mm:ss.SSS}] [%t] %logger{5} - %X{code} %msg %n"
+      currentLogFilename: /tmp/mfy.log
+      archivedLogFilenamePattern: /tmp/mfy-%d{yyyy-MM-dd}-%i.log.gz
+      archivedFileCount: 7
+      timeZone: UTC
+      maxFileSize: 1024MB
+
+http:
+  httpClientConnectTimeoutMs: 10000
+  httpClientSocketTimeoutMs: 10000
+  httpClientTimeToLiveInMs: 10000
+  httpClientMaxTotal: 100
+  httpClientMaxTotalPerRoute: 100
+
+
+prometheusName: prometheusMetrics
+prometheusPath: /prometheusMetrics
+
+ElasticSearch:
+  hosts: ["localhost"]
+  ports: [9200]
+  schemes: ["http"]
